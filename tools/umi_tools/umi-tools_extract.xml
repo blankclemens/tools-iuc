@@ -1,4 +1,4 @@
-<tool id="umi_tools_extract" name="UMI-tools extract" version="0.4.4.0">
+<tool id="umi_tools_extract" name="UMI-tools extract" version="0.4.4.1">
     <description>Extract UMI from fastq files</description>
     <requirements>
         <requirement type="package" version="0.4.4">umi_tools</requirement>
@@ -127,16 +127,16 @@
         </conditional>
     </inputs>
     <outputs>
-        <data name="out" format_source="input_single">
+        <data name="out" format_source="input_single" label="UMI-tools extract on ${on_string}">
             <filter>input_type['type'] == "single"</filter>
         </data>
-        <data name="out1" format_source="input_read1">
+        <data name="out1" format_source="input_read1" label="UMI-tools extract read 1 on ${on_string}">
             <filter>input_type['type'] == "paired"</filter>
         </data>
-        <data name="out2" format_source="input_read2">
+        <data name="out2" format_source="input_read2" label="UMI-tools extract read 2 on ${on_string}">
             <filter>input_type['type'] == "paired"</filter>
         </data>
-        <data name="out_log" format="txt">
+        <data name="out_log" format="txt" label="UMI-tools extract log file on ${on_string}">
             <filter>print_log == True</filter>
         </data>
     </outputs>
